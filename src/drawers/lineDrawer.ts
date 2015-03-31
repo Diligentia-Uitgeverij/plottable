@@ -8,10 +8,15 @@ export module _Drawer {
     private _pathSelection: D3.Selection;
     private _interpolation: any;
 
+
+    constructor() {
+      super();
+      this._interpolation = "linear";
+    }
+
     protected _enterData(data: any[]) {
       super._enterData(data);
       this._pathSelection.datum(data);
-      this._interpolation = "linear";
     }
 
     public setup(area: D3.Selection) {

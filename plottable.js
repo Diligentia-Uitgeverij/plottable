@@ -2957,12 +2957,12 @@ var Plottable;
         var Line = (function (_super) {
             __extends(Line, _super);
             function Line() {
-                _super.apply(this, arguments);
+                _super.call(this);
+                this._interpolation = "linear";
             }
             Line.prototype._enterData = function (data) {
                 _super.prototype._enterData.call(this, data);
                 this._pathSelection.datum(data);
-                this._interpolation = "linear";
             };
             Line.prototype.setup = function (area) {
                 this._pathSelection = area.append("path").classed(Line.LINE_CLASS, true).style({
